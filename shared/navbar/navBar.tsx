@@ -73,12 +73,17 @@ const Navbar: React.FC = () => {
           {/* Actions - Back to Original Style */}
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-3">
-              <div className="animate-ring w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-md">
+              <a
+                href="tel:+18773498789"
+                className="animate-ring w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-md hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer"
+              >
                 <PhoneCall size={18} />
-              </div>
-              <button className="bg-primary hover:bg-black text-white px-6 py-3 rounded-md text-xs font-black transition-all duration-300 tracking-widest uppercase">
-                Request A Call
-              </button>
+              </a>
+              <Link href="/contact">
+                <button className="bg-primary hover:bg-black text-white px-6 py-3 rounded-md text-xs font-black transition-all duration-300 tracking-widest uppercase">
+                  Request A Call
+                </button>
+              </Link>
             </div>
 
             <button

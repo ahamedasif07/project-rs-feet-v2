@@ -92,7 +92,7 @@ const HeroSlider = () => {
             href="https://wa.me/18773498789"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary hover:bg-slate-900 text-white px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase shadow-xl cursor-pointer"
+            className="bg-primary hover:bg-slate-900 text-white px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3  uppercase shadow-xl cursor-pointer"
           >
             <Phone size={16} className="animate-pulse" />
             Emergency Support
@@ -101,7 +101,7 @@ const HeroSlider = () => {
           {/* Services Page Link */}
           <Link
             href="/services"
-            className="bg-white/5 border border-white/10 hover:bg-white text-white hover:text-black px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase backdrop-blur-md cursor-pointer"
+            className="bg-white/5 border border-white/10 hover:bg-white text-white hover:text-black px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3  uppercase backdrop-blur-md cursor-pointer"
           >
             View Services
             <ArrowRight size={16} />
