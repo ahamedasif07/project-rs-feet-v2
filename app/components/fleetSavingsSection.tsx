@@ -1,0 +1,99 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+
+import React from "react";
+import {
+  CheckCircle2,
+  Zap,
+  Clock,
+  ShieldCheck,
+  ArrowRight,
+} from "lucide-react";
+import Image from "next/image";
+
+const FleetSavingsSection = () => {
+  return (
+    <section className="w-full bg-white py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side: Image Slot with Gradient Background */}
+          <div className="relative p-4 md:p-0">
+            <div className="relative h-[400px] md:h-[550px] w-full overflow-hidden rounded-md bg-gradient-to-br from-zinc-50 to-zinc-100">
+              <Image
+                src="/assets/images/35 off.png"
+                alt="Truck Repair Service"
+                fill
+                className="object-contain p-8 md:p-12 z-20"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent z-10" />
+
+              {/* Floating Price Badge */}
+              <div className="absolute top-4 left-4 lg:top-4 lg:left-4 bg-primary p-4 md:p-6 lg:p-8 rounded-md shadow-xl animate-bounce-slow z-30">
+                <div className="text-white font-black text-lg md:text-xl lg:text-2xl tracking-tighter leading-none">
+                  $35/HR
+                </div>
+                <div className="text-white/90 text-[8px] md:text-[10px]  font-bold uppercase tracking-widest mt-1">
+                  Labor Savings
+                </div>
+              </div>
+
+              {/* Floating Trust Icon */}
+              <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 bg-zinc-900 p-3 md:p-4 lg:p-5 rounded-md shadow-2xl z-30">
+                <ShieldCheck className="text-primary w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Content & Features */}
+          <div className="flex flex-col">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-primary font-black text-xs uppercase tracking-[0.4em]">
+                Fleet Program
+              </span>
+              <div className="w-12 h-[1px] bg-zinc-200" />
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight  pb-4">
+              Unmatched Value For <br />
+              <span className="text-primary ">Fleet Partners</span>
+            </h2>
+
+            <p className="text-slate-600 leading-relaxed text-base mb-6">
+              At Rapid Solutions, we provide cost-effective truck and vehicle
+              repairs that keep your business moving. Our RS fleet plans are
+              designed to minimize downtime and maximize reliability.
+            </p>
+
+            {/* Bullet Points */}
+            <div className="space-y-4 mb-6 bg-zinc-50 p-8 rounded-md border border-zinc-100">
+              {[
+                "Direct & Clear Communication",
+                "Multi-brand & Heavy Duty Expertise",
+                "Customized Maintenance Intervals",
+                "Exclusive #WHEELSROLL Fleet Rates",
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-4 text-zinc-700 font-bold text-sm uppercase tracking-tight"
+                >
+                  <CheckCircle2 size={18} className="text-primary" />
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <button className="bg-primary rounded-md hover:bg-black text-white hover:text-white px-8 py-4 text-xs font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase shadow-2xl">
+              Become a Fleet Partner
+              <ArrowRight size={16} className="transition-transform" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FleetSavingsSection;

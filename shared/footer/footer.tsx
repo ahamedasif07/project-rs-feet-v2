@@ -1,0 +1,211 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+
+// --- Custom Social SVGs ---
+const SocialIcons = {
+  Facebook: () => (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  ),
+  Twitter: () => (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+    </svg>
+  ),
+  Instagram: () => (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  ),
+  Linkedin: () => (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  ),
+};
+
+const Footer: React.FC = () => {
+  const currentYear: number = new Date().getFullYear();
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Locations", href: "/locations" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  const serviceLinks = [
+    "Mobile Service",
+    "24/7 Emergency",
+    "Hydraulic Repair",
+    "Equipment Service",
+  ];
+
+  const socialLinks = [
+    { Icon: SocialIcons.Facebook, href: "#" },
+    { Icon: SocialIcons.Twitter, href: "#" },
+    { Icon: SocialIcons.Instagram, href: "#" },
+    { Icon: SocialIcons.Linkedin, href: "#" },
+  ];
+
+  return (
+    <footer className="bg-white border-t border-slate-100 pt-20 pb-10 px-6 font-sans">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Column 1: Brand Info (Logo Integrated) */}
+          <div className="space-y-2">
+            <Link href="/" className="inline-block">
+              <Image
+                src="/assets/images/IMG_3431-removebg-preview.png" // আপনার লোগো পাথ চেক করে নিন
+                alt="Fleet Services Logo"
+                width={180}
+                height={50}
+                className="object-contain"
+              />
+            </Link>
+            <p className="text-slate-600 leading-relaxed text-sm pb-4">
+              Rapid Solutions provides professional hydraulic and mobile fleet
+              services across California and Nevada, with 24/7 RS emergency
+              support always within reach.
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, href }, i) => (
+                <Link
+                  key={i}
+                  href={href}
+                  className="w-9 h-9 rounded-md bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all duration-300"
+                >
+                  <Icon />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 2: Navigation */}
+          <div>
+            <h4 className="text-slate-900 font-black uppercase tracking-widest text-[14px] mb-8">
+              Navigation
+            </h4>
+            <ul className="space-y-4">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="group text-slate-500 hover:text-primary text-sm font-bold flex items-center gap-2 transition-colors"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-slate-200 group-hover:bg-primary transition-all"></span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div>
+            <h4 className="text-slate-900 font-black uppercase tracking-widest text-[14px] mb-8">
+              Our Services
+            </h4>
+            <ul className="space-y-4">
+              {serviceLinks.map((service) => (
+                <li key={service}>
+                  <Link
+                    href="#"
+                    className="text-slate-500 hover:text-primary text-sm font-bold transition-colors"
+                  >
+                    {service}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Dispatch Action Box */}
+          <div className="space-y-6 group">
+            <h4 className="text-slate-900 font-black uppercase tracking-widest text-[14px] mb-6">
+              Dispatch Center
+            </h4>
+            <div className="bg-primary p-6 rounded-xl text-white group relative overflow-hidden">
+              {/* Background Slide Effect */}
+              <div className="absolute inset-0 bg-slate-900 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+
+              <div className="relative z-10">
+                <p className="text-white/80 text-xs font-bold uppercase tracking-widest mb-2">
+                  Emergency Line
+                </p>
+                <h3 className="text-2xl font-black mb-6 tracking-tight">
+                  +1 877-349-8789
+                </h3>
+
+                {/* Default Black Button */}
+                <Link
+                  href="tel:+18773498789"
+                  className="inline-flex items-center group-hover:bg-[#D4AF37] justify-center gap-2 w-full text-[10px] font-black uppercase bg-black text-white px-6 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
+                >
+                  Call Now <ArrowUpRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* --- Bottom Section --- */}
+        <div className="border-t border-slate-100 pt-6 text-center">
+          <p className="text-slate-500 text-sm font-medium">
+            © {currentYear} RS Fleet Services. Built With
+            <span className="text-primary font-bold"> Passion</span>.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
