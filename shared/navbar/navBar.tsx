@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="w-full bg-white/90 backdrop-blur-md fixed top-0 z-50 border-b border-gray-100">
+      <nav className="w-full bg-[#FCFCFC] backdrop-blur-md fixed top-0 z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto  flex items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="hover:opacity-80 transition-opacity">
