@@ -24,20 +24,39 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="w-full  bg-[#FCFCFC] backdrop-blur-md fixed top-0 z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto   flex items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <Link href="/" className=" transition-opacity">
-            <Image
-              src="/assets/images/cropImagelogo.jpeg"
-              alt="logo"
-              width={130}
-              height={300}
-              className=" "
-            />
-          </Link>
+      <nav className="w-full bg-[#FCFCFC] backdrop-blur-md fixed top-0 z-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 ">
+          {/* --- Logo Section (Updated for larger size) --- */}
+          <div className="">
+            <Link href="/" className="transition-opacity block">
+              <div className="relative">
+                {/* Mobile Logo: 180px width */}
+                <div className="block md:hidden">
+                  <Image
+                    src="/assets/images/IMG_3431-removebg-preview.png"
+                    alt="logo"
+                    width={180}
+                    height={70}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                {/* Desktop Logo: 280px width (Apni ekhane width barale aro boro hobe) */}
+                <div className="hidden md:block">
+                  <Image
+                    src="/assets/images/IMG_3431-removebg-preview.png"
+                    alt="logo"
+                    width={200}
+                    height={80}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
+            </Link>
+          </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu - Back to Original Style */}
           <div className="hidden lg:flex gap-8">
             {navLinks.map((link) => (
               <Link
@@ -51,7 +70,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Actions */}
+          {/* Actions - Back to Original Style */}
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-3">
               <div className="animate-ring w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-md">
@@ -62,7 +81,6 @@ const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile Toggle Button */}
             <button
               className="lg:hidden p-2 text-primary hover:bg-gray-100 rounded-md transition-colors"
               onClick={() => setIsOpen(true)}
@@ -72,13 +90,12 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* --- Mobile Drawer --- */}
+        {/* --- Mobile Drawer - Back to Original Animations --- */}
         <div
           className={`fixed inset-0 z-[70] lg:hidden transition-all duration-500 ${
             isOpen ? "visible" : "invisible"
           }`}
         >
-          {/* Overlay */}
           <div
             className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
               isOpen ? "opacity-100" : "opacity-0"
@@ -86,13 +103,11 @@ const Navbar: React.FC = () => {
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Drawer Content */}
           <div
             className={`absolute top-0 right-0 h-screen w-[80%] max-w-[320px] bg-white shadow-2xl transition-transform duration-500 ease-in-out transform ${
               isOpen ? "translate-x-0" : "translate-x-full"
             } flex flex-col`}
           >
-            {/* Drawer Header */}
             <div className="flex justify-between items-center p-6 border-b border-gray-50">
               <span className="font-bold text-gray-400 tracking-widest text-xs">
                 MENU
@@ -105,7 +120,6 @@ const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Drawer Links */}
             <div className="flex-1 overflow-y-auto p-6 flex flex-col">
               {navLinks.map((link, index) => (
                 <Link
@@ -118,7 +132,6 @@ const Navbar: React.FC = () => {
                       : "translate-x-10 opacity-0"
                   }`}
                   style={{
-                    // Kholar somoy delay thakbe, kintu bondho korar somoy ekdom instantly chole jabe
                     transitionDelay: isOpen ? `${index * 40}ms` : "0ms",
                   }}
                 >
@@ -126,7 +139,6 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
 
-              {/* Mobile CTA */}
               <div
                 className={`mt-8 space-y-6 transition-all duration-500 ${
                   isOpen
@@ -175,7 +187,8 @@ const Navbar: React.FC = () => {
         `}</style>
       </nav>
 
-      <div className="h-20 w-full"></div>
+      {/* Adjusted Spacer for larger logo height */}
+      <div className="h-24 md:h-32 w-full"></div>
     </>
   );
 };
