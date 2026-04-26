@@ -18,8 +18,8 @@ const Navbar: React.FC = () => {
     { name: "About Us", href: "/about" },
     { name: "What we offer", href: "/services" },
     { name: "FAQ", href: "/faq" },
-    { name: "Locations", href: "#" },
-    { name: "Fleet Partner Program", href: "/fleet" },
+    { name: "Locations", href: "locations" },
+    { name: "Fleet Partner Program", href: "/partner-program" },
   ];
 
   return (
@@ -147,9 +147,11 @@ const Navbar: React.FC = () => {
                 }`}
                 style={{ transitionDelay: isOpen ? "300ms" : "0ms" }}
               >
-                <button className="w-full bg-black hover:bg-primary text-white py-4 rounded-md text-xs font-black tracking-widest uppercase shadow-lg transition-all">
-                  Request A Call
-                </button>
+                <Link href="/contact">
+                  <button className="w-full bg-black hover:bg-primary text-white py-4 rounded-md text-xs font-black tracking-widest uppercase shadow-lg transition-all">
+                    Request A Call
+                  </button>
+                </Link>
                 <div className="flex items-center justify-center gap-3 text-gray-500">
                   <PhoneCall size={18} className="text-primary" />
                   <span className="text-sm font-medium">24/7 Support</span>

@@ -4,6 +4,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Phone, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // --- Swiper CSS ---
 import "swiper/css";
@@ -84,17 +85,27 @@ const HeroSlider = () => {
           </p>
         </div>
 
-        {/* BOTTOM RIGHT CORNER: Buttons */}
+        {/* --- Button Container --- */}
         <div className="absolute bottom-8 right-6 md:bottom-12 md:right-12 lg:bottom-16 lg:right-16 flex flex-col sm:flex-row gap-3">
-          <button className="bg-primary hover:bg-white text-white hover:text-black px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase shadow-xl">
+          {/* WhatsApp / Contact Link */}
+          <a
+            href="https://wa.me/18773498789"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary hover:bg-slate-900 text-white px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase shadow-xl cursor-pointer"
+          >
             <Phone size={16} className="animate-pulse" />
-            Emergency Call
-          </button>
+            Emergency Support
+          </a>
 
-          <button className="bg-white/5 border border-white/10 hover:bg-white text-white hover:text-black px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase backdrop-blur-md">
+          {/* Services Page Link */}
+          <Link
+            href="/services"
+            className="bg-white/5 border border-white/10 hover:bg-white text-white hover:text-black px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase backdrop-blur-md cursor-pointer"
+          >
             View Services
             <ArrowRight size={16} />
-          </button>
+          </Link>
         </div>
       </div>
 

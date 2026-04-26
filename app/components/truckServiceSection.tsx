@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // Interface for Image Data
 interface ServiceImage {
@@ -107,15 +108,17 @@ const TruckServiceSection: React.FC = () => {
                 your operational uptime.
               </p>
 
-              <button className="relative z-30 group bg-primary hover:bg-zinc-900 text-white px-8 py-4 text-[14px] font-black transition-all duration-500 flex items-center justify-center gap-3  uppercase shadow-2xl rounded-md overflow-hidden">
-                {/* Hover background slide effect (Optional but looks premium) */}
-                <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out -z-10"></span>
-                Schedule Service
-                <ArrowRight
-                  size={14}
-                  className="group-hover:translate-x-1 transition-transform duration-500"
-                />
-              </button>
+              <Link href="/contact">
+                <button className="relative z-30 group bg-primary hover:bg-zinc-900 text-white px-8 py-4 text-[14px] font-black transition-all duration-500 flex items-center justify-center gap-3  uppercase shadow-2xl rounded-md overflow-hidden">
+                  {/* Hover background slide effect (Optional but looks premium) */}
+                  <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out -z-10"></span>
+                  Schedule Service
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform duration-500"
+                  />
+                </button>
+              </Link>
             </div>
           </div>
 

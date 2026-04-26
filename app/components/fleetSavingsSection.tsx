@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const FleetSavingsSection = () => {
   return (
@@ -85,10 +86,12 @@ const FleetSavingsSection = () => {
               ))}
             </div>
 
-            <button className="bg-primary rounded-md hover:bg-black text-white hover:text-white px-8 py-4 text-xs font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase shadow-2xl">
-              Become a Fleet Partner
-              <ArrowRight size={16} className="transition-transform" />
-            </button>
+            <Link href="/partner-program">
+              <button className="bg-primary rounded-md hover:bg-black text-white hover:text-white px-8 py-4 text-xs font-black transition-all duration-500 flex items-center justify-center gap-3 tracking-widest uppercase shadow-2xl">
+                Become a Fleet Partner
+                <ArrowRight size={16} className="transition-transform" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import {
   Timer,
   Settings,
 } from "lucide-react";
+import Link from "next/link";
 
 const RSFleetsPartner = () => {
   const benefits = [
@@ -74,10 +75,12 @@ const RSFleetsPartner = () => {
             </div>
 
             {/* Button: Primary to Black */}
-            <button className="group flex items-center gap-4 bg-primary hover:bg-black text-white px-10 py-5 rounded-md font-black text-xs transition-all duration-500 tracking-[0.2em] uppercase shadow-2xl shadow-primary/20">
-              Get Started
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-            </button>
+            <Link href="/contact">
+              <button className="group flex items-center gap-4 bg-primary hover:bg-black text-white px-10 py-5 rounded-md font-black text-xs transition-all duration-500 tracking-[0.2em] uppercase shadow-2xl shadow-primary/20">
+                Get Started
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+              </button>
+            </Link>
           </div>
 
           {/* RIGHT SIDE: Premium Pricing Card */}
