@@ -64,7 +64,7 @@ const FleetSavingsSection = () => {
 
             <p className="text-slate-600 leading-relaxed text-base mb-6">
               At Rapid Solutions, we provide cost-effective truck and vehicle
-              repairs that keep your business moving. Our RS fleet plans are
+              repairs that keep your business moving. Our RS fleet plans areap
               designed to minimize downtime and maximize reliability.
             </p>
 
