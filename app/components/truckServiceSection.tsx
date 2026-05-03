@@ -1,18 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
-// Interface for Image Data
 interface ServiceImage {
   url: string;
   alt: string;
 }
 
 const TruckServiceSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const serviceImages: ServiceImage[] = [
     {
       url: "https://i.ibb.co.com/F4J3qZXH/1-A119-B8-A-AF9-E-4473-9-D7-F-866-E18942-C57-1.png",
@@ -20,12 +21,10 @@ const TruckServiceSection: React.FC = () => {
     },
     {
       url: "https://i.ibb.co.com/SYdHBn8/CCD2-DA6-B-3-DF0-4-F66-B97-F-35-A4-EAFE80-C7-1.png",
-
       alt: "Fleet service truck onsite",
     },
     {
       url: "https://i.ibb.co.com/Kxqq2B2L/DCAF35-F9-EF53-48-DE-9-CB3-E72-C807-E0-EFF-1.png",
-
       alt: "Diesel technician performing diagnostics",
     },
     {
@@ -34,119 +33,102 @@ const TruckServiceSection: React.FC = () => {
     },
   ];
 
-  // Properly Typed Container Variants
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  // Auto-play logic for image crossfade
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % serviceImages.length);
+    }, 4000); // 4 seconds interval
+    return () => clearInterval(timer);
+  }, [serviceImages.length]);
 
-  // Properly Typed Item Variants with Scale and Rotate
-  const itemVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.85,
-      rotate: -3,
-      y: 40,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    },
-  };
+  const features = ["24/7 Mobile Service", "Fast Response Time"];
 
   return (
-    <section className="relative bg-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-white py-16 md:py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Content Side */}
-          <div className="lg:col-span-5 z-10 order-2 lg:order-1">
-            <div className="bg-slate-50 p-8 md:p-12 border border-slate-100 shadow-sm rounded-xl relative group overflow-hidden">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-1000" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Side: Content */}
+          <div className="order-2 lg:order-1">
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
+              Minimize Downtime. <br />
+              <span className="text-primary ">Maximize Fleet Performance.</span>
+            </h2>
 
-              <div className="mb-6 relative inline-flex items-center justify-center w-14 h-14 bg-primary rounded-lg shadow-lg shadow-blue-100">
-                <svg
-                  className="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
+            <p className="text-slate-600 leading-relaxed text-lg mb-8 max-w-xl">
+              Rapid Solutions Fleet Service delivers OEM-level diagnostics and
+              on-site heavy-duty repairs — keeping your trucks on the road and
+              your business moving.
+            </p>
 
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-6">
-                Cutoff downtime by getting
-                <span className="text-primary uppercase"> OEM</span> repairs
-                performed onsite
-              </h2>
-
-              <p className="text-slate-600 leading-relaxed text-base mb-6">
-                RS certified technicians bring dealer-level expertise directly
-                to your fleet, minimizing transportation costs and maximizing
-                your operational uptime.
-              </p>
-
+            <div className="flex flex-wrap gap-4 mb-10">
               <Link href="/contact">
-                <button className="relative z-30 group bg-primary hover:bg-zinc-900 text-white px-8 py-4 text-[14px] font-black transition-all duration-500 flex items-center justify-center gap-3  uppercase shadow-2xl rounded-md overflow-hidden">
-                  {/* Hover background slide effect (Optional but looks premium) */}
-                  <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out -z-10"></span>
+                <button className="bg-zinc-950 hover:bg-primary text-white px-8 py-4 text-sm font-black transition-all duration-300 flex items-center gap-2 uppercase rounded-lg shadow-xl">
                   Schedule Service
-                  <ArrowRight
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform duration-500"
-                  />
+                </button>
+              </Link>
+              <Link href="/partner-program">
+                <button className="bg-white border-2 border-slate-200 hover:border-primary text-slate-900 px-8 py-4 text-sm font-black transition-all duration-300 flex items-center gap-2 uppercase rounded-lg">
+                  Fleet Partner
                 </button>
               </Link>
             </div>
+
+            {/* Feature List */}
+            <div className="grid grid-cols-2 gap-y-4 gap-x-2">
+              {features.map((feature, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle2 className="text-primary w-5 h-5" />
+                  <span className="text-slate-700 font-bold text-sm">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Gallery Side with Staggered Variants */}
-          <motion.div
-            className="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 md:gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {serviceImages.map((image, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl group border border-slate-100 bg-slate-100"
-              >
-                <Image
-                  src={image.url}
-                  alt={image.alt}
-                  fill
-                  className="object-cover  group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors duration-500 pointer-events-none" />
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Right Side: Animated Image Gallery */}
+          <div className="relative order-1 lg:order-2 h-[400px] md:h-[550px] w-full group">
+            {/* Background Decorative Element */}
+            <div className="absolute -inset-4 bg-slate-100 rounded-[2rem] -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
+
+            <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={serviceImages[currentIndex].url}
+                    alt={serviceImages[currentIndex].alt}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Subtle Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Progress Indicators */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                {serviceImages.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className={`h-1.5 transition-all duration-500 rounded-full ${
+                      idx === currentIndex
+                        ? "w-8 bg-primary"
+                        : "w-2 bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
