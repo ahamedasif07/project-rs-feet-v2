@@ -185,12 +185,12 @@ const Footer: React.FC = () => {
                   Emergency Line
                 </p>
                 <h3 className="text-2xl font-black mb-6 tracking-tight">
-                  +1 877-349-8789
+                  +1 779 770 7575
                 </h3>
 
                 {/* Default Black Button */}
                 <Link
-                  href="tel:+18773498789"
+                  href="tel:+1 779 770 7575"
                   className="inline-flex items-center group-hover:bg-[#D4AF37] justify-center gap-2 w-full text-[10px] font-black uppercase bg-black text-white px-6 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
                 >
                   Call Now <ArrowUpRight size={14} />
