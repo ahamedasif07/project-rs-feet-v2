@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
                 {/* Default Black Button */}
                 <Link
                   href="tel:+1 779 770 7575"
-                  className="inline-flex items-center group-hover:bg-[#D4AF37] justify-center gap-2 w-full text-[10px] font-black uppercase bg-black text-white px-6 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
+                  className="inline-flex items-center  justify-center gap-2 w-full text-[10px] font-black uppercase bg-black text-white px-6 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
                 >
                   Call Now <ArrowUpRight size={14} />
                 </Link>
