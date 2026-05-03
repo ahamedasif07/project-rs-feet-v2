@@ -83,9 +83,13 @@ const Footer: React.FC = () => {
 
   const serviceLinks = [
     "Mobile Service",
-    "24/7 Emergency",
-    "Hydraulic Repair",
-    "Equipment Service",
+    "DOT/BIT Inspections",
+    "Preventive Maintenance",
+    "Heavy Equipment Repair",
+    "Roadside Assistance",
+    "Bus & RV Services",
+    "General Diesel Repair",
+    "Lift Gate & Towing",
   ];
 
   const socialLinks = [
