@@ -17,7 +17,7 @@ const Home = () => {
       <ServiceTypes />
       <TruckServiceSection />
       <WhyChooseUsSection />
-      <TestimonialSlider />
+      {/* <TestimonialSlider /> */}
       <FleetLocations />
       <FleetPartnerSection />
     </div>

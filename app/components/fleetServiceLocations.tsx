@@ -3,7 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 
 // --- TypeScript Interfaces ---
 interface LocationData {
@@ -18,57 +18,73 @@ interface LocationData {
 const locations: LocationData[] = [
   {
     id: 1,
-    city: "Bay Area",
+    city: "Truckee",
     state: "CA",
-    address: "San Francisco & Oakland Metro Area",
-    phone: "+1 877-349-8789",
+    address: "Truckee, California Area",
+    phone: "+1 530 237 3532",
     services: ["Mobile", "24/7 Emergency", "Hydraulic"],
   },
   {
     id: 2,
-    city: "Sacramento",
-    state: "CA",
-    address: "1420 Blue Oaks Blvd, Roseville, CA 95747",
-    phone: "+1 877-349-8789",
+    city: "Carson City",
+    state: "NV",
+    address: "Carson City, Nevada Area",
+    phone: "+1 530 237 3532",
     services: ["Mobile", "Emergency", "Equipment"],
   },
   {
     id: 3,
-    city: "Central Valley",
-    state: "CA",
-    address: "Stockton, Modesto & Fresno Areas",
-    phone: "+1 877-349-8789",
+    city: "Reno / Sparks",
+    state: "NV",
+    address: "Reno, Sparks & Fernley, NV",
+    phone: "+1 775 525 0203",
     services: ["Mobile", "Equipment", "Hydraulic"],
   },
   {
     id: 4,
-    city: "Fontana",
-    state: "CA",
-    address: "Inland Empire & SB Area",
-    phone: "+1 877-349-8789",
+    city: "Winnemucca",
+    state: "NV",
+    address: "Winnemucca & Hawthorne, NV",
+    phone: "+1 775 525 0203",
     services: ["Mobile", "Emergency", "Hydraulic"],
   },
   {
     id: 5,
-    city: "Reno",
-    state: "NV",
-    address: "Reno, Sparks & Carson City",
-    phone: "+1 877-349-8789",
+    city: "Chicago",
+    state: "IL",
+    address: "Chicago Metro Area",
+    phone: "+1 779 770 7575",
     services: ["Mobile", "Emergency", "Equipment"],
   },
   {
     id: 6,
-    city: "Las Vegas",
-    state: "NV",
-    address: "Las Vegas Strip & Henderson Area",
-    phone: "+1 877-349-8789",
+    city: "Northern IL",
+    state: "IL",
+    address: "Joliet, Naperville & Rockford, IL",
+    phone: "+1 779 770 7575",
+    services: ["Mobile", "24/7 Emergency"],
+  },
+  {
+    id: 7,
+    city: "Milwaukee",
+    state: "WI",
+    address: "Milwaukee Metro Area",
+    phone: "+1 414 399 3026",
+    services: ["Mobile", "24/7 Emergency"],
+  },
+  {
+    id: 8,
+    city: "Wisconsin",
+    state: "WI",
+    address: "Madison, Green Bay & Kenosha, WI",
+    phone: "+1 414 399 3026",
     services: ["Mobile", "24/7 Emergency"],
   },
 ];
 
 const FleetLocations: React.FC = () => {
   return (
-    <section className="bg-[#FAFAF9] py-20 px-6 font-sans">
+    <section className="bg-white py-20 px-6 font-sans">
       <div className="max-w-[1400px] mx-auto">
         {/* --- Header --- */}
         <div className="text-center mb-16">
@@ -76,8 +92,8 @@ const FleetLocations: React.FC = () => {
             Rapid Solutions <span className="text-primary">Locations</span>
           </h2>
           <p className="text-slate-600 leading-relaxed text-base mb-6">
-            Explore the RS service network across key California and Nevada
-            markets.
+            Explore the RS service network across key California, Nevada,
+            Illinois, and Wisconsin markets.
           </p>
         </div>
 
