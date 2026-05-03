@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href="tel:+18773498789"
+                href="tel:+1 779 770 7575"
                 className="animate-ring w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-md hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer"
               >
                 <PhoneCall size={18} />

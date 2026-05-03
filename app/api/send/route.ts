@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Rapid Solutions <onboarding@resend.dev>",
-      to: ["rxasif31@gmail.com"],
+      to: ["rsfleetservice17@gmail.com"],
       subject: `New Lead: ${firstName} ${lastName} ${companyName ? `from ${companyName}` : ""}`,
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1a202c; max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">

@@ -81,11 +81,12 @@ const ContactSection = () => {
         {/* --- Header --- */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-6">
-            Contact <span className="text-green-600">Us.</span>
+            Contact <span className="text-primary">Us.</span>
           </h2>
           <p className="text-slate-600 text-base md:text-lg font-medium max-w-xl mx-auto">
-            Get in touch with <span className="text-green-600">M's Fleet</span>.
-            Fill out the form below and we'll get back to you shortly.
+            Get in touch with{" "}
+            <span className="text-primary">Rapid Solutions</span>. Fill out the
+            form below and we'll get back to you shortly.
           </p>
         </div>
 
@@ -194,7 +195,7 @@ const ContactSection = () => {
                         checked={selectedServices.includes(service)}
                         onChange={() => toggleService(service)}
                       />
-                      <div className="w-5 h-5 bg-white border border-slate-200 rounded-md peer-checked:bg-green-600 peer-checked:border-green-600 transition-all flex items-center justify-center">
+                      <div className="w-5 h-5 bg-white border border-slate-200 rounded-md peer-checked:bg-primary peer-checked:border-primary transition-all flex items-center justify-center">
                         <CheckCircle2 className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100" />
                       </div>
                     </div>
@@ -228,7 +229,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-slate-900 hover:bg-green-600 disabled:bg-slate-400 text-white px-10 py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md active:scale-95 min-w-[200px]"
+                className="bg-slate-900 hover:bg-primary disabled:bg-slate-400 text-white px-10 py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md active:scale-95 min-w-[200px]"
               >
                 {loading ? (
                   <>

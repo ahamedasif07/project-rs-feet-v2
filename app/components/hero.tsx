@@ -74,7 +74,7 @@ const HeroSlider = () => {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl  font-black text-white mb-4 tracking-tighter uppercase leading-[0.9] drop-shadow-2xl">
+          <h1 className="text-3xl md:text-6xl  font-black text-white mb-4 tracking-tighter uppercase leading-[0.9] drop-shadow-2xl">
             Truck & Trailer <br />
             <span className="text-primary">Repair Experts</span>
           </h1>
