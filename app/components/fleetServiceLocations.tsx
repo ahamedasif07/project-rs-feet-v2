@@ -100,7 +100,7 @@ const FleetLocations: React.FC = () => {
         {/* --- Full Width Map --- */}
         <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden mb-12 group shadow-lg bg-white border border-slate-200">
           <Image
-            src="/assets/images/map-image.png"
+            src="/assets/images/updated-map-image.png"
             alt="Fleet Service Area Map"
             fill
             className="object-contain p-4 transition-transform duration-1000 group-hover:scale-105"
