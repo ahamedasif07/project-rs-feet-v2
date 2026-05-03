@@ -3,7 +3,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
 
 // --- Swiper CSS ---
@@ -64,8 +64,8 @@ const HeroSlider = () => {
       <div className="relative z-10 h-full w-full max-w-[1800px] mx-auto">
         {/* TOP LEFT CORNER: Heading & Tagline */}
         <div className="absolute top-8 left-6 md:top-12 md:left-12 lg:top-16 lg:left-16 max-w-2xl">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-primary font-black text-[10px] md:text-xs uppercase tracking-[0.4em]">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-primary  font-black text-[10px] md:text-xs uppercase tracking-[0.4em]">
               Rapid Solutions
             </span>
             <div className="w-8 h-[1px] bg-primary/50" />
@@ -88,15 +88,13 @@ const HeroSlider = () => {
         {/* --- Button Container --- */}
         <div className="absolute bottom-8 right-6 md:bottom-12 md:right-12 lg:bottom-16 lg:right-16 flex flex-col sm:flex-row gap-3">
           {/* WhatsApp / Contact Link */}
-          <a
-            href="https://wa.me/18773498789"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary hover:bg-slate-900 text-white px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3  uppercase shadow-xl cursor-pointer"
+          <Link
+            href="mailto:dispatch@rsfleetservices.com"
+            className="bg-primary hover:bg-slate-900 text-white px-8 py-4 text-[10px] font-black transition-all duration-500 flex items-center justify-center gap-3 uppercase shadow-xl cursor-pointer"
           >
-            <Phone size={16} className="animate-pulse" />
+            <Mail size={16} className="animate-pulse" />
             Emergency Support
-          </a>
+          </Link>
 
           {/* Services Page Link */}
           <Link
