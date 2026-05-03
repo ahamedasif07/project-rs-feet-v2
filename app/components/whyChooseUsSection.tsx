@@ -53,7 +53,7 @@ export default function PremiumFeatures() {
             Why Choose
             <span className="text-primary"> Rapid Solutions</span>
           </h1>
-          <p className="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-500 text-lg  max-w-3xl mx-auto leading-relaxed">
             Built for commercial trucks, roadside service, and fleet operations
             that cannot afford downtime.
           </p>

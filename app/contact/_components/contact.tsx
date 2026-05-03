@@ -83,11 +83,36 @@ const ContactSection = () => {
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-6">
             Contact <span className="text-primary">Us.</span>
           </h2>
-          <p className="text-slate-600 text-base md:text-lg font-medium max-w-xl mx-auto">
+          <p className="text-slate-600 text-base md:text-lg font-medium max-w-xl mx-auto mb-8">
             Get in touch with{" "}
             <span className="text-primary">Rapid Solutions</span>. Fill out the
             form below and we'll get back to you shortly.
           </p>
+
+          {/* Contact Details Added Here */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+            <a
+              href="tel:+17797707575"
+              className="flex items-center gap-3 text-slate-900 hover:text-primary transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-50 transition-colors">
+                <Phone className="w-5 h-5 text-primary" />
+              </div>
+              <span className="font-bold text-lg">+1 779 770 7575</span>
+            </a>
+
+            <a
+              href="mailto:sales@rsfleetservices.com"
+              className="flex items-center gap-3 text-slate-900 hover:text-primary transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-50 transition-colors">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <span className="font-bold text-lg">
+                sales@rsfleetservices.com
+              </span>
+            </a>
+          </div>
         </div>
 
         {/* --- Form Container --- */}
@@ -127,7 +152,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Company Name Field (New) */}
+            {/* Company Name Field */}
             <div className="space-y-2">
               <label className="text-[11px] font-bold uppercase text-slate-900 tracking-wider ml-1">
                 Company Name
