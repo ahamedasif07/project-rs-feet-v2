@@ -75,21 +75,22 @@ const Footer: React.FC = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Locations", href: "/locations" },
-    { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
+  // Updated services to objects with hrefs pointing to the services page
   const serviceLinks = [
-    "Mobile Service",
-    "DOT/BIT Inspections",
-    "Preventive Maintenance",
-    "Heavy Equipment Repair",
-    "Roadside Assistance",
-    "Bus & RV Services",
-    "General Diesel Repair",
-    "Lift Gate & Towing",
+    { name: "Mobile Service", href: "/services" },
+    { name: "DOT/BIT Inspections", href: "/services" },
+    { name: "Preventive Maintenance", href: "/services" },
+    { name: "Heavy Equipment Repair", href: "/services" },
+    { name: "Roadside Assistance", href: "/services" },
+    { name: "Bus & RV Services", href: "/services" },
+    { name: "General Diesel Repair", href: "/services" },
+    { name: "Lift Gate & Towing", href: "/services" },
   ];
 
   const socialLinks = [
@@ -103,11 +104,11 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t border-slate-100 pt-20 pb-10 px-6 font-sans">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Column 1: Brand Info (Logo Integrated) */}
+          {/* Column 1: Brand Info */}
           <div className="space-y-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/assets/images/IMG_3431-removebg-preview.png" // আপনার লোগো পাথ চেক করে নিন
+                src="/assets/images/IMG_3431-removebg-preview.png"
                 alt="Fleet Services Logo"
                 width={180}
                 height={50}
@@ -152,19 +153,19 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Services */}
+          {/* Column 3: Services (Updated with Links) */}
           <div>
             <h4 className="text-slate-900 font-black uppercase tracking-widest text-[14px] mb-8">
               Our Services
             </h4>
             <ul className="space-y-4">
               {serviceLinks.map((service) => (
-                <li key={service}>
+                <li key={service.name}>
                   <Link
-                    href="#"
+                    href={service.href}
                     className="text-slate-500 hover:text-primary text-sm font-bold transition-colors"
                   >
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}
@@ -177,7 +178,6 @@ const Footer: React.FC = () => {
               Dispatch Center
             </h4>
             <div className="bg-primary p-6 rounded-xl text-white group relative overflow-hidden">
-              {/* Background Slide Effect */}
               <div className="absolute inset-0 bg-slate-900 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
 
               <div className="relative z-10">
@@ -188,10 +188,9 @@ const Footer: React.FC = () => {
                   +1 779 770 7575
                 </h3>
 
-                {/* Default Black Button */}
                 <Link
-                  href="tel:+1 779 770 7575"
-                  className="inline-flex items-center  justify-center gap-2 w-full text-[10px] font-black uppercase bg-black text-white px-6 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
+                  href="tel:+17797707575"
+                  className="inline-flex items-center justify-center gap-2 w-full text-[10px] font-black uppercase bg-black text-white px-6 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
                 >
                   Call Now <ArrowUpRight size={14} />
                 </Link>
