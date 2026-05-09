@@ -1,11 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
+
 "use client";
 
-import React from "react";
+
 import {
   CheckCircle2,
-  Zap,
-  Clock,
   ShieldCheck,
   ArrowRight,
 } from "lucide-react";
@@ -19,7 +17,7 @@ const FleetSavingsSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Image Slot with Gradient Background */}
           <div className="relative p-4 md:p-0">
-            <div className="relative h-[400px] md:h-[550px] w-full overflow-hidden rounded-md bg-gradient-to-br from-zinc-50 to-zinc-100">
+            <div className="relative h-[400px] md:h-[550px] w-full overflow-hidden rounded-md bg-linear-to-br from-zinc-50 to-zinc-100">
               <Image
                 src="/assets/images/35 off.png"
                 alt="Truck Repair Service"
@@ -29,7 +27,7 @@ const FleetSavingsSection = () => {
                 priority
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-t from-white/10 to-transparent z-10" />
 
               {/* Floating Price Badge */}
               <div className="absolute top-4 left-4 lg:top-4 lg:left-4 bg-primary p-4 md:p-6 lg:p-8 rounded-md shadow-xl animate-bounce-slow z-30">
@@ -54,7 +52,7 @@ const FleetSavingsSection = () => {
               <span className="text-primary font-black text-xs uppercase tracking-[0.4em]">
                 Fleet Program
               </span>
-              <div className="w-12 h-[1px] bg-zinc-200" />
+              <div className="w-12 h-px bg-zinc-200" />
             </div>
 
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight  pb-4">

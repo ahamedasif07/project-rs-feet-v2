@@ -1,8 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
-import React from "react";
+
+
 import {
   ShieldCheck,
-  Zap,
   Wrench,
   ArrowRight,
   TrendingDown,
@@ -51,7 +50,7 @@ const RSFleetsPartner = () => {
               We collaborate with fleet leaders to engineer a low-risk,
               high-reward partnership. At{" "}
               <span className="text-slate-900 font-bold">RS Fleets</span>, we
-              don't just service vehicles; we optimize your entire operational
+              don&apos;t just service vehicles; we optimize your entire operational
               cost.
             </p>
 
@@ -142,7 +141,7 @@ const RSFleetsPartner = () => {
                   <p className="text-[10px] text-slate-700 uppercase font-black ">
                     Authorized By RS Fleets
                   </p>
-                  <div className="w-8 h-[1px] bg-slate-200"></div>
+                  <div className="w-8 h-px bg-slate-200"></div>
                 </div>
               </div>
             </div>

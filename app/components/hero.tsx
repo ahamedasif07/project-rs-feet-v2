@@ -3,7 +3,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { Phone, ArrowRight, Mail } from "lucide-react";
+import {  ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
 
 // --- Swiper CSS ---

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import {  CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 interface ServiceImage {

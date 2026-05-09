@@ -1,10 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 // --- Custom Social SVGs ---
 const SocialIcons = {

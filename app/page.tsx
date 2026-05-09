@@ -5,7 +5,6 @@ import FleetSavingsSection from "./components/fleetSavingsSection";
 import ServiceTypes from "./components/servicetypes";
 import TruckServiceSection from "./components/truckServiceSection";
 import WhyChooseUsSection from "./components/whyChooseUsSection";
-import TestimonialSlider from "./components/TestimonialSlider";
 import FleetLocations from "./components/fleetServiceLocations";
 import FleetPartnerSection from "./components/fleetPartnerSection";
 

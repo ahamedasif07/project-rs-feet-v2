@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       message,
     } = body;
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Rapid Solutions <onboarding@resend.dev>",
       to: ["rsfleetservice17@gmail.com"],
       subject: `New Lead: ${firstName} ${lastName} ${companyName ? `from ${companyName}` : ""}`,
