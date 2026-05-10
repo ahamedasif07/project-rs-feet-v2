@@ -112,6 +112,7 @@ const Footer: React.FC = () => {
                 width={180}
                 height={50}
                 className="object-contain"
+                style={{ width: "100%", height: "auto" }}
               />
             </Link>
             <p className="text-slate-600 leading-relaxed text-sm pb-4">

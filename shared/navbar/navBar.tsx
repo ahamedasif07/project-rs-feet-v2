@@ -31,24 +31,26 @@ const Navbar: React.FC = () => {
             <Link href="/" className="transition-opacity block">
               <div className="relative">
                 {/* Mobile Logo: 180px width */}
-                <div className="block md:hidden">
+                <div className="block md:hidden w-[180px]">
                   <Image
                     src="/assets/images/IMG_3431-removebg-preview.png"
                     alt="logo"
                     width={180}
                     height={70}
                     className="object-contain"
+                    style={{ width: "100%", height: "auto" }}
                     priority
                   />
                 </div>
                 {/* Desktop Logo: 280px width (Apni ekhane width barale aro boro hobe) */}
-                <div className="hidden md:block">
+                <div className="hidden md:block w-[200px]">
                   <Image
                     src="/assets/images/IMG_3431-removebg-preview.png"
                     alt="logo"
                     width={200}
                     height={80}
                     className="object-contain"
+                    style={{ width: "100%", height: "auto" }}
                     priority
                   />
                 </div>

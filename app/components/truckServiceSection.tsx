@@ -1,37 +1,37 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import {  CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 interface ServiceImage {
   url: string;
   alt: string;
 }
 
+const serviceImages: ServiceImage[] = [
+  {
+    url: "https://i.ibb.co.com/F4J3qZXH/1-A119-B8-A-AF9-E-4473-9-D7-F-866-E18942-C57-1.png",
+    alt: "Mechanic working on heavy duty engine",
+  },
+  {
+    url: "https://i.ibb.co.com/SYdHBn8/CCD2-DA6-B-3-DF0-4-F66-B97-F-35-A4-EAFE80-C7-1.png",
+    alt: "Fleet service truck onsite",
+  },
+  {
+    url: "https://i.ibb.co.com/Kxqq2B2L/DCAF35-F9-EF53-48-DE-9-CB3-E72-C807-E0-EFF-1.png",
+    alt: "Diesel technician performing diagnostics",
+  },
+  {
+    url: "https://i.ibb.co.com/XxPFpgcN/E3-F6-BE0-C-D6-A4-403-B-AE72-86-BDA5-AE2-B38-1.png",
+    alt: "Mobile repair unit working on truck",
+  },
+];
+
 const TruckServiceSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const serviceImages: ServiceImage[] = [
-    {
-      url: "https://i.ibb.co.com/F4J3qZXH/1-A119-B8-A-AF9-E-4473-9-D7-F-866-E18942-C57-1.png",
-      alt: "Mechanic working on heavy duty engine",
-    },
-    {
-      url: "https://i.ibb.co.com/SYdHBn8/CCD2-DA6-B-3-DF0-4-F66-B97-F-35-A4-EAFE80-C7-1.png",
-      alt: "Fleet service truck onsite",
-    },
-    {
-      url: "https://i.ibb.co.com/Kxqq2B2L/DCAF35-F9-EF53-48-DE-9-CB3-E72-C807-E0-EFF-1.png",
-      alt: "Diesel technician performing diagnostics",
-    },
-    {
-      url: "https://i.ibb.co.com/XxPFpgcN/E3-F6-BE0-C-D6-A4-403-B-AE72-86-BDA5-AE2-B38-1.png",
-      alt: "Mobile repair unit working on truck",
-    },
-  ];
 
   // Auto-play logic for image crossfade
   useEffect(() => {
@@ -39,7 +39,7 @@ const TruckServiceSection: React.FC = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % serviceImages.length);
     }, 4000); // 4 seconds interval
     return () => clearInterval(timer);
-  }, [serviceImages.length]);
+  }, []);
 
   const features = ["24/7 Mobile Service", "Fast Response Time"];
 
@@ -89,10 +89,10 @@ const TruckServiceSection: React.FC = () => {
           {/* Right Side: Animated Image Gallery */}
           <div className="relative order-1 lg:order-2 h-[400px] md:h-[550px] w-full group">
             {/* Background Decorative Element */}
-            <div className="absolute -inset-4 bg-slate-100 rounded-[2rem] -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
+            <div className="absolute -inset-4 bg-slate-100 rounded-4xl -rotate-2 group-hover:rotate-0 transition-transform duration-700" />
 
             <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-10">
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, scale: 1.05 }}
@@ -106,11 +106,12 @@ const TruckServiceSection: React.FC = () => {
                     alt={serviceImages[currentIndex].alt}
                     fill
                     priority
+                    unoptimized
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Subtle Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
                 </motion.div>
               </AnimatePresence>
 
